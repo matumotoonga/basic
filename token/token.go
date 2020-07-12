@@ -18,14 +18,19 @@ const (
 	SLASH		= "/"
 	PLUS    	= "+"
 	LT			= "<"
+	LE			= "<="
 	GT			= ">"
+	GE			= ">="
 	EQ			= "=="
-	NE 		    = "!="
+	NE 		    = "<>"
+	INPUT		= "INPUT"
 	LET     	= "LET"
 	GOTO		= "GOTO"
 	GOSUB		= "GOSUB"
 	IF      	= "IF" 
 	THEN    	= "THEN" 
+	END			= "END"
+	STOP		= "STOP"
 )
 
 var keywords = map[string]TokenType {
