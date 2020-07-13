@@ -22,19 +22,21 @@ func do(in io.Reader, out io.Writer) {
 			return
 		}
 		line := scanner.Text()
-		slin := strings.Split(line," ")
+		slin := strings.Split(line, " ")
 
 		var head = ""
-		// var secd = ""
+		var secd = ""
 
-		for i,v := range slin {
-			if i == 0 { head = v }
-			// if i == 1 { secd = v }
+		for i, v := range slin {
+			if i == 0 {
+				head = v
+			}
+			if i == 1 { secd = v }
 		}
 		n, _ := strconv.Atoi(head)
 
 		if n > 0 {
-			text.Insert(n,line)
+			text.Insert(n, line)
 
 		} else {
 			command := strings.ToUpper(head)
@@ -50,23 +52,23 @@ func do(in io.Reader, out io.Writer) {
 
 			} else if command == "CODE" {
 				com.Code()
-				
+
 			} else if command == "DIR" {
 				com.Dir()
 
 			} else if command == "LIST" {
 				text.List(out)
-			
+
 			} else if command == "LOAD" {
+				text.Load(secd) 
 
-			
 			} else if command == "SAVE" {
+				text.Save(secd)
 
-			
 			} else {
 
 			}
-			
+
 		}
 
 	}
