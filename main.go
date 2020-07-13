@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"github.com/matumotoonga/basic/com"
+	"github.com/matumotoonga/basic/text"
 	"io"
 	"os"
 	"strconv"
@@ -33,11 +34,12 @@ func do(in io.Reader, out io.Writer) {
 		n, _ := strconv.Atoi(head)
 
 		if n > 0 {
+			text.Insert(n,line)
 
 		} else {
 			command := strings.ToUpper(head)
 
-			if command == "QUIT" {
+			if command == "QUIT" || command == "BYE" {
 				break
 			} else if command == "BUILD" {
 				com.Build()
@@ -53,6 +55,12 @@ func do(in io.Reader, out io.Writer) {
 				com.Dir()
 
 			} else if command == "LIST" {
+				text.List(out)
+			
+			} else if command == "LOAD" {
+
+			
+			} else if command == "SAVE" {
 
 			
 			} else {
