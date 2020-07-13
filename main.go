@@ -39,8 +39,22 @@ func do(in io.Reader, out io.Writer) {
 
 			if command == "QUIT" {
 				break
+			} else if command == "BUILD" {
+				com.Build()
+				break
+
 			} else if command == "CLS" {
 				com.Cls()
+
+			} else if command == "CODE" {
+				com.Code()
+				
+			} else if command == "DIR" {
+				com.Dir()
+
+			} else if command == "LIST" {
+
+			
 			} else {
 
 			}
